@@ -16,7 +16,7 @@
       center: [55.73, 37.53],
       // Уровень масштабирования. Допустимые значения:
       // от 0 (весь мир) до 19.
-      zoom: 12,
+      zoom: 9,
     });
 
     let data = [{
@@ -68,7 +68,8 @@
 
     let placemarks = data.map(function (el) {
 
-      return new ymaps.GeoObject({
+      return new ymaps.GeoObject(
+        {
           geometry: {
             type: "Point",
             coordinates: el.coords,
@@ -92,12 +93,25 @@
     });
 
 
-    
+
 
 
     cluster.add(placemarks);
-
     myMap.geoObjects.add(cluster);
+
+
+    ymaps.borders.load('RU', {
+      lang: 'ru',
+      quality: 1
+    }).then(function (geojson) {
+
+      var regions = ymaps.geoQuery(geojson);
+      console.log(regions);
+
+      regions.search('properties.iso3166 = "RU-KRS"').setOptions('fillColor', '#ff001a');
+      regions.addToMap(myMap);
+    });
+
 
   }
 
