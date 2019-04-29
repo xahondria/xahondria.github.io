@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Глейси</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="popup-feedback popup-shadow">
+      <p class="popup-feedback__title">Мы обязательно вам ответим!</p>
+      <form class="popup-feedback-form" action="https://echo.htmlacademy.ru" method="post">
+        <label aria-label="Как вас зовут?">
+          <input class="input popup-feedback__input" type="text" placeholder="Как вас зовут?" name="name" required>
+        </label>
+        <label aria-label="Ваша почта для ответа?">
+          <input class="input popup-feedback__input" type="email" placeholder="Ваша почта для ответа?" name="email" required>
+        </label>
+        <label aria-label="Напишите что-нибудь...">
+          <textarea class="textarea popup-feedback__textarea" placeholder="Напишите что-нибудь..." name="feedback-text"></textarea>
+        </label>
+        <a class="popup-feedback-link" href="index.html">На главную</a>
+        <button class="button popup-feedback__button" type="submit">Отправить</button>
+      </form>
+    </div>
+  </body>
+</html>
